@@ -340,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-14 17:19:56" itemprop="dateModified" datetime="2018-10-14T17:19:56+08:00">2018-10-14</time>
+                <time title="Modified: 2018-10-14 20:54:10" itemprop="dateModified" datetime="2018-10-14T20:54:10+08:00">2018-10-14</time>
               
             
           </span>
@@ -376,7 +376,7 @@
         
           <p>之前面试要求写点小程序，记录下过程。</p>
 <h3 id="一-需求"><a href="#一-需求" class="headerlink" title="一.需求"></a>一.需求</h3><p>编写一个加密兔 兔宝爬虫</p>
-<p>点击链接 <a href="http://t.cn/RdGOckh，登录后点击“领养”，抓取其中的兔宝数据。" target="_blank" rel="noopener">http://t.cn/RdGOckh，登录后点击“领养”，抓取其中的兔宝数据。</a><br>要求：</p>
+<p>点击链接 <a href="http://t.cn/RdGOckh" target="_blank" rel="noopener">http://t.cn/RdGOckh</a> ，登录后点击“领养”，抓取其中的兔宝数据。<br>要求：</p>
 <ol>
 <li><p>可以指定抓取的数量（精确到十位数即可）。</p>
 </li>
@@ -513,7 +513,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-14 16:32:40" itemprop="dateModified" datetime="2018-10-14T16:32:40+08:00">2018-10-14</time>
+                <time title="Modified: 2018-10-14 20:53:44" itemprop="dateModified" datetime="2018-10-14T20:53:44+08:00">2018-10-14</time>
               
             
           </span>
@@ -547,22 +547,15 @@
 
       
         
-          
-            <p>​    之前一直听说Docker是个好东西，但是一直没仔细去了解一下，现在有了搭建环境的需求，发现使用Docker是真的方便。具体的教程这里有很详细的 <a href="https://yeasy.gitbooks.io/docker_practice/" target="_blank" rel="noopener">Docker从入门到实践</a>，就不细说了。这里说一点自己的理解。</p>
-<h3 id="虚拟机-VS-Docker"><a href="#虚拟机-VS-Docker" class="headerlink" title="虚拟机 VS Docker"></a>虚拟机 VS Docker</h3><p>​    Docker主要是解决软件的环境配置问题，与虚拟机相比，它更加轻量。虚拟机就是一台虚拟的电脑，而Docker只是对进程做了隔离，它直接使用系统的内核。这里可以说一下的是因为Docker从Linux发展而来，很多镜像都以Linux为基础，而Docker其实会使用系统的内核。所以Docker是肯定不能直接使用Windows内核的，安装Windows版本的Docker需要启用Hyper-v或者使用VirtualBox先安装一个Linux虚拟机然后使用它的内核。但因为这其中有很多优化，所以Windows使用Docker效率仍然会比用虚拟机强很多。</p>
-<h3 id="Docker组成"><a href="#Docker组成" class="headerlink" title="Docker组成"></a>Docker组成</h3><p>​    主要包括了镜像、容器、仓库，简单使用的话其实主要是对镜像和容器的操作，而仓库可以用来搜索、下载镜像。</p>
-<p>​    这里记一下几个最常用的指令</p>
-<blockquote>
-<p>docker container run -p 80:80 -dit –rm   image  # 运行指定的镜像，如果不存在则从官方库中下载</p>
-<p>#-p进行容器内外端口映射     # -d 指定后台运行    # -i 进行交互</p>
-<p>#-t 通过终端进行交互 # –rm 运行结束后自动删除生成的镜像</p>
-</blockquote>
-<p>​    进入容器的终端非常常用</p>
-<blockquote>
-<p>docker exec -it  image  bash    # 执行容器的bash指令，使用户进入shell</p>
-</blockquote>
-
-          
+          <p>​    之前一直听说Docker是个好东西，但是一直没仔细去了解一下，现在有了搭建环境的需求，发现使用Docker是真的方便。具体的教程这里有很详细的 <a href="https://yeasy.gitbooks.io/docker_practice/" target="_blank" rel="noopener">Docker从入门到实践</a>，就不细说了。这里说一点自己的理解。</p>
+<h3 id="虚拟机-VS-Docker"><a href="#虚拟机-VS-Docker" class="headerlink" title="虚拟机 VS Docker"></a>虚拟机 VS Docker</h3><p>​    Docker主要是解决软件的环境配置问题，与虚拟机相比，它更加轻量。虚拟机就是一台虚拟的电脑，而Docker只是对进程做了隔离，它直接使用系统的内核。这里可以说一下的是因为Docker从Linux发展而来，很多镜像都以Linux为基础，而Docker其实会使用系统的内核。所以Docker是肯定不能直接使用Windows内核的，安装Windows版本的Docker需要启用Hyper-v或者使用VirtualBox先安装一个Linux虚拟机然后使用它的内核。但因为这其中有很多优化，所以Windows使用Docker效率仍然会比用虚拟机强很多。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/11/docker-first-step/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -677,7 +670,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-14 16:55:23" itemprop="dateModified" datetime="2018-10-14T16:55:23+08:00">2018-10-14</time>
+                <time title="Modified: 2018-10-14 20:54:24" itemprop="dateModified" datetime="2018-10-14T20:54:24+08:00">2018-10-14</time>
               
             
           </span>
@@ -806,6 +799,21 @@
 
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
               
             </nav>
           
