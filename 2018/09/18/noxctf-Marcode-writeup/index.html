@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="​    之前一直听说Docker是个好东西，但是一直没仔细去了解一下，现在有了搭建环境的需求，发现使用Docker是真的方便。具体的教程这里有很详细的 Docker从入门到实践，就不细说了。这里说一点自己的理解。 虚拟机 VS Docker​    Docker主要是解决软件的环境配置问题，与虚拟机相比，它更加轻量。虚拟机就是一台虚拟的电脑，而Docker只是对进程做了隔离，它直接使用系统的内核">
-<meta name="keywords" content="docker,mysql">
+  <meta name="description" content="描述 Marcode (Mr. Code in Hebrew), Ineed your help!I got a movie but I cant see it. It hypnotizes me.please help me!yours,Gveretcode (Mrs. Code in Hebrew)   P.S.change NOXCTF to noxCTF.https://drive.goo">
+<meta name="keywords" content="ctf,writeup">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker初步使用">
-<meta property="og:url" content="https://www.zer0i3.com/2018/06/11/docker-first-step/index.html">
+<meta property="og:title" content="noxctf-Marcode-writeup">
+<meta property="og:url" content="https://www.zer0i3.com/2018/09/18/noxctf-Marcode-writeup/index.html">
 <meta property="og:site_name" content="zer0i3&#39;s Notes">
-<meta property="og:description" content="​    之前一直听说Docker是个好东西，但是一直没仔细去了解一下，现在有了搭建环境的需求，发现使用Docker是真的方便。具体的教程这里有很详细的 Docker从入门到实践，就不细说了。这里说一点自己的理解。 虚拟机 VS Docker​    Docker主要是解决软件的环境配置问题，与虚拟机相比，它更加轻量。虚拟机就是一台虚拟的电脑，而Docker只是对进程做了隔离，它直接使用系统的内核">
+<meta property="og:description" content="描述 Marcode (Mr. Code in Hebrew), Ineed your help!I got a movie but I cant see it. It hypnotizes me.please help me!yours,Gveretcode (Mrs. Code in Hebrew)   P.S.change NOXCTF to noxCTF.https://drive.goo">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-14T13:05:13.473Z">
+<meta property="og:updated_time" content="2018-10-14T13:16:31.355Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker初步使用">
-<meta name="twitter:description" content="​    之前一直听说Docker是个好东西，但是一直没仔细去了解一下，现在有了搭建环境的需求，发现使用Docker是真的方便。具体的教程这里有很详细的 Docker从入门到实践，就不细说了。这里说一点自己的理解。 虚拟机 VS Docker​    Docker主要是解决软件的环境配置问题，与虚拟机相比，它更加轻量。虚拟机就是一台虚拟的电脑，而Docker只是对进程做了隔离，它直接使用系统的内核">
+<meta name="twitter:title" content="noxctf-Marcode-writeup">
+<meta name="twitter:description" content="描述 Marcode (Mr. Code in Hebrew), Ineed your help!I got a movie but I cant see it. It hypnotizes me.please help me!yours,Gveretcode (Mrs. Code in Hebrew)   P.S.change NOXCTF to noxCTF.https://drive.goo">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.zer0i3.com/2018/06/11/docker-first-step/"/>
+  <link rel="canonical" href="https://www.zer0i3.com/2018/09/18/noxctf-Marcode-writeup/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>Docker初步使用 | zer0i3's Notes</title>
+  <title>noxctf-Marcode-writeup | zer0i3's Notes</title>
   
 
 
@@ -281,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.zer0i3.com/2018/06/11/docker-first-step/">
+    <link itemprop="mainEntityOfPage" href="https://www.zer0i3.com/2018/09/18/noxctf-Marcode-writeup/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zer0i3">
@@ -298,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Docker初步使用
+          <h1 class="post-title" itemprop="name headline">noxctf-Marcode-writeup
               
             
           </h1>
@@ -323,7 +323,7 @@
                 
               
 
-              <time title="Created: 2018-06-11 21:32:36" itemprop="dateCreated datePublished" datetime="2018-06-11T21:32:36+08:00">2018-06-11</time>
+              <time title="Created: 2018-09-18 13:33:36" itemprop="dateCreated datePublished" datetime="2018-09-18T13:33:36+08:00">2018-09-18</time>
             
 
             
@@ -340,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-14 21:05:13" itemprop="dateModified" datetime="2018-10-14T21:05:13+08:00">2018-10-14</time>
+                <time title="Modified: 2018-10-14 21:16:31" itemprop="dateModified" datetime="2018-10-14T21:16:31+08:00">2018-10-14</time>
               
             
           </span>
@@ -373,31 +373,45 @@
       
 
       
-        <p>​    之前一直听说Docker是个好东西，但是一直没仔细去了解一下，现在有了搭建环境的需求，发现使用Docker是真的方便。具体的教程这里有很详细的 <a href="https://yeasy.gitbooks.io/docker_practice/" target="_blank" rel="noopener">Docker从入门到实践</a>，就不细说了。这里说一点自己的理解。</p>
-<h3 id="虚拟机-VS-Docker"><a href="#虚拟机-VS-Docker" class="headerlink" title="虚拟机 VS Docker"></a>虚拟机 VS Docker</h3><p>​    Docker主要是解决软件的环境配置问题，与虚拟机相比，它更加轻量。虚拟机就是一台虚拟的电脑，而Docker只是对进程做了隔离，它直接使用系统的内核。这里可以说一下的是因为Docker从Linux发展而来，很多镜像都以Linux为基础，而Docker其实会使用系统的内核。所以Docker是肯定不能直接使用Windows内核的，安装Windows版本的Docker需要启用Hyper-v或者使用VirtualBox先安装一个Linux虚拟机然后使用它的内核。但因为这其中有很多优化，所以Windows使用Docker效率仍然会比用虚拟机强很多。<br><a id="more"></a></p>
-<h3 id="Docker组成"><a href="#Docker组成" class="headerlink" title="Docker组成"></a>Docker组成</h3><p>​    主要包括了镜像、容器、仓库，简单使用的话其实主要是对镜像和容器的操作，而仓库可以用来搜索、下载镜像。</p>
-<p>​    这里记一下几个最常用的指令</p>
-<blockquote>
-<p>docker container run -p 80:80 -dit –rm   image  # 运行指定的镜像，如果不存在则从官方库中下载</p>
-<p> -p进行容器内外端口映射      -d 指定后台运行     -i 进行交互</p>
-<p> -t 通过终端进行交互  –rm 运行结束后自动删除生成的镜像</p>
+        <h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><blockquote>
+<p>Marcode (Mr. Code in Hebrew), Ineed your help!<br>I got a movie but I cant see it. It hypnotizes me.<br>please help me!<br>yours,<br>Gveretcode (Mrs. Code in Hebrew)</p>
 </blockquote>
-<p>​    进入容器的终端非常常用</p>
 <blockquote>
-<p>docker exec -it  containerid  bash    # 执行容器的bash指令，使用户进入shell</p>
+<p>P.S.<br>change NOXCTF to noxCTF.<br><a href="https://drive.google.com/open?id=1GkalBntU1s6d_sw_S5I4GinD8hBrh-C-" target="_blank" rel="noopener">https://drive.google.com/open?id=1GkalBntU1s6d_sw_S5I4GinD8hBrh-C-</a></p>
 </blockquote>
-<p>更新分界线 2018.10.14</p>
-<hr>
-<h3 id="解决mysql无法启动问题"><a href="#解决mysql无法启动问题" class="headerlink" title="解决mysql无法启动问题"></a>解决mysql无法启动问题</h3><p>以下部分参考自<a href="https://github.com/moby/moby/issues/34390" target="_blank" rel="noopener">moby issues</a> </p>
-<p>有时候会有将多服务部署在同一容器中的需求，但是自己安装的mysql有时候会有启动失败的情况，具体来说就是一直显示starting….然后静默失败,或者像下面</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker build -t mysql-fails .</span><br><span class="line">docker <span class="keyword">run</span> -it mysql-fails /bin/bash -c 'service mysql start'</span><br><span class="line">[FAIL] Starting MySQL database server: mysqld . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . failed!</span><br></pre></td></tr></table></figure>
-<p>总结一下，这个问题其实是因为写入权限的原因，mysql 启动的时候需要拥有 <code>/var/lib/mysql</code>目录的写权限，而docker构建的时候是分层构建的，所以当mysql启动的时候如果这个目录不可写就会出现这个问题。查看官方mysql的启动脚本其实也有类似处理：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">RUN &#123; \</span><br><span class="line">		echo mysql-community-server mysql-community-server/data-dir select ''; \</span><br><span class="line">		echo mysql-community-server mysql-community-server/root-pass password ''; \</span><br><span class="line">		echo mysql-community-server mysql-community-server/re-root-pass password ''; \</span><br><span class="line">		echo mysql-community-server mysql-community-server/remove-test-db select false; \</span><br><span class="line">	&#125; | debconf-set-selections \</span><br><span class="line">	&amp;&amp; apt-get update &amp;&amp; apt-get install -y mysql-server="$&#123;MYSQL_VERSION&#125;" &amp;&amp; rm -rf /var/lib/apt/lists/* \</span><br><span class="line">	&amp;&amp; rm -rf /var/lib/mysql &amp;&amp; mkdir -p /var/lib/mysql /var/run/mysqld \</span><br><span class="line">	&amp;&amp; chown -R mysql:mysql /var/lib/mysql /var/run/mysqld \</span><br><span class="line"><span class="meta">#</span> ensure that /var/run/mysqld (used for socket and lock files) is writable regardless of the UID our mysqld instance ends up having at runtime</span><br><span class="line">	&amp;&amp; chmod 777 /var/run/mysqld</span><br></pre></td></tr></table></figure>
-<p>上述命令中先删除/var/lib/mysql，又进行创建，以此保证目录可写，所以解决这个问题有两种方式：</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>链接地址下载后为一个视频，视频每一帧都是一个二维码，需要逐帧分析视频图片并对结果进行二次操作</p>
+<a id="more"></a>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li><p>视频逐帧保存为图片(<em>2种方法</em>)</p>
 <ul>
-<li>启动mysql前先执行<code>find /var/lib/mysql/mysql -exec touch -c -a {} +</code> ，这是上面的issues中提到的，属于dirty hack的方式，具体来说这条命令其实什么也没干，只是修改了mysql这个目录下的文件时间，但是执行该命令后目录变得可写了</li>
-<li><strong>推荐</strong> 使用匿名卷，<code>VOLUME /var/lib/mysql</code>在dockerfile中使用这样的语法,如果使用的时候不进行卷映射，将会自动映射匿名卷，这样更符合使用docker的推荐方式，即不将数据存储在存储层而是存储在卷中。</li>
+<li><p>FFmpeg<br><code>$ffmpeg -i ffmpeg_test.avi frames_%03d.jpg -hide_banner</code></p>
+</li>
+<li><p>cv2</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line">video_full_path=<span class="string">"video/01_01.wmv"</span></span><br><span class="line">cap  = cv2.VideoCapture(video_full_path)</span><br><span class="line"><span class="keyword">print</span> cap.isOpened()</span><br><span class="line">frame_count = <span class="number">1</span></span><br><span class="line">success = <span class="keyword">True</span></span><br><span class="line"><span class="keyword">while</span>(success):</span><br><span class="line">    success, frame = cap.read()</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Read a new frame: '</span>, success</span><br><span class="line"> </span><br><span class="line">    params = []</span><br><span class="line">    <span class="comment">#params.append(cv.CV_IMWRITE_PXM_BINARY)</span></span><br><span class="line">    params.append(<span class="number">1</span>)</span><br><span class="line">    cv2.imwrite(<span class="string">"video"</span> + <span class="string">"_%d.jpg"</span> % frame_count, frame, params)</span><br><span class="line"> </span><br><span class="line">    frame_count = frame_count + <span class="number">1</span></span><br><span class="line"> </span><br><span class="line">cap.release()</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+</li>
+<li><p>解析图片为url</p>
+<ul>
+<li>python zbar模块</li>
+<li><a href="http://pc.wwei.cn/" target="_blank" rel="noopener">批量二维码解析</a> windows、mac版，导出到Excel</li>
+</ul>
+</li>
+<li><p>url转为对应字符</p>
+<p>打开url获取对应字符并批量替换</p>
+</li>
+<li><p>字符组成文字片段</p>
+<p>如使用Excel根据序号进行排序，获取排序后的字符</p>
+</li>
+<li><p>检查片段内容寻找flag</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">THE TWO MEN APPEARED OUT OF NOWHERE A FEW YNARDS APART IN THE NARROW MOONLIT LANE FOR A SECOND THEY STOOD QUITE STOILL WANDS DIRECTED AT EACH OTHERS CHESTS THEN RECOGNIZING EACH OTHER THEY STOWED THEIR WANDS BENEATH THEIR CLOAKS AND STARTED WALKING BRISKLY IN THE SAME DIRECTION NEWS ASKED THE TALLEXR OF THE TWO THE BEST REPLIED SEVERUS SNAPE THE LANE WAS BORDERED ON THE LEFT BY WILD LOWGROWING BRAMBLES ON THE RIGHT BY A HICGH NEATLY MANICURED HEDGE THE MENS LONG CLOAKS FLAPPED AROUND THEIR ANKLES AS THEY MARCHED THOUGHT I MIGHTT BE LATE SAID YAXLEY HIS BLUNT FEATURES SLIDING IN AND OUT OF SIGHT AS THE BRANCHES OF OVERHANGING TREES BROKE THE MOONLIGHT IT WAS A LITTLE TRICKIER THAN I EXPECTEFD BUT I HOPE HE WILL BE SATISFIED YOU SOUND CONFIDENT THAT YOUR RECEPTION WILL BE GOOD SNAPE NODDED BUT DID NOT ELABORATE THEY TURNED RIGHT INTO A WIDE DRIVAEWAY THAT LED OFF THE LANE THE HIGH HEDGE CURVED INTO THEM RUNNIVNG OFF INTO THE DISTANCE BEYOND THE PIR OF IMPAOSING WROUGHTIRON GATES BARRING THE MENS WAY NEITDHER OF THEM BROKE STEP IN SILENCE BOTH RAISED THEIR LEFT ARMS IN A KIND OF SALAUTE AND PASSED STRAIGHT THROUGH AS THOUGH THE DARK METAL WAS SMOKE THE YEW HEDGES MUFFLED THE SOKUND OF THE MENS FOOTSTEPS THERE WAS A RUSTLE SOMEWHERE TO THEIR RIGHT YAXLEY DREW HIS WAND AGAIN POINTING IT OVER HIS COMPANIONS HEAD BUT THE SOURCE OF THE NOISE PROVED TO BE NOTHING MORE THAN A PUREWHITE PEACOCK STERUTTING MAJESTICALLY ALONG THE TOP OF THE HEDGE HE ALWAYS DID HIMSELF WELL LUCIUS PEACOCKS YAXLEY THRUST HIS WAND BADCK UNDER HIS CLOAK WITH A SNORT A HANDSOME MANOR HOUSE GREW OUT OF THE DARKNESS AT THE END OF THE STRAIGHT DRIVE LIGHTS GLINTING IN THE DIAMOND PANED DOWNSTAAIRS WINDOWS SOMEWHERE IN THE DARK GARDEN BEYOND THE HEDGE A FOUNTAIN WAS PLAYING GRAVEL CRACKLED BENEATH THEIR FEET AS SNAPE AND YAXLEY SPED TOWARD THE FRONT DOOR WHICH SWUNG INWARD AT THEIR APPROACH THOUGH NOBODY HAD VISIBLY OPENED VIT THE HALLWAY WAS LARGE DIMLY LIT AND SUMPTUOUSLY DECORATED WITH A MAGNIFICENT CARPET COVERING MOST OF THE STONE FLOOR THE EYES OF THE PALEFACED PORTRAITS ON THE WALL FOLLOWED SNAPE AND YAXLEY AS THEY STRODE PAST THE TWO MEN HALTED AT A HEAVY WOODEN DOOR LEADING INTO THE NEXT ROOM HESITATED FOR THE SPACE OF A HEARTBEAT THEN SNAPE TURNED THE BRONZE HANDLE THE DRAWING ROOM WAS FULL OF SILENT PREOPLE SITTING AT A LONG AND ORNATE TABLE THE ROOMS USUAL FURNITURE HAD BEEN PUSHED CARELESSLY UP AGAINST THE WALLS ILLUMINATION CAME FROM A ROARING FIRE BENEATH A HANDSOME MARBLE MANTELPIECE SURMOUNTED BY A GILDED MIRROR SNAPE AND YAXLEY LINGERED FOR A MOMENT ON THE THRESHOLD AS THEIR EYES GREW ACCUSTOMED TO THE LACK OF LIGHT THEY WERE DRAWN UPWARD TO THE STRANGEST FEATURE OF THE SCENE AN APPARENTLY UNCONSCIOUS HUMAN FIGURE HANGING UPSIDE DOWN OVER THE TABLE REVOLVING SLOWLY AS IF SUSPENDED BY AAN INVISIBLE ROPE AND REFLECTED IN THE MIRROR AND IN THE BARE POLISHED SURFACE OF THE TABLE BELOW NONE OF THE PEOPLE SEATED UNDERNEATH THIS SINGULAR SIGHT WERE LOOKING AT IT EXCEPT FOR A PALE YOUNG MAN SITTING ALMOST DIRECTLY BELOW IT HE SEEMED UNABLE TO PREVENT HIMSELF FROM GLANCING UPWARD EVERY MINUTE OR SO YAXLEY SNAPE SAID A HIGH CLEAR VOICE FROM THE HEAD OF THE TABLE YOU ARE VERY NEARLY LATE THE SPEAKER WAS SEATED DIRECTLY IN FRONT OF THE FIREPLACE SO THAT IT WAS DIFFICULT AT FIRST FOR THE NEW ARRIVALS TO MAKE OUT MORE THAN HIS SILHOUETTE</span><br></pre></td></tr></table></figure>
+<ul>
+<li>对照原文</li>
+<li>语法检查</li>
+</ul>
+</li>
+</ol>
+<h3 id="Flag"><a href="#Flag" class="headerlink" title="Flag"></a>Flag</h3><p>flag:<strong>noxCTF{AVADAKEDAVRA}</strong></p>
 
       
     </div>
@@ -418,9 +432,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/docker/" rel="tag"># docker</a>
+            <a href="/tags/ctf/" rel="tag"># ctf</a>
           
-            <a href="/tags/mysql/" rel="tag"># mysql</a>
+            <a href="/tags/writeup/" rel="tag"># writeup</a>
           
         </div>
       
@@ -433,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/29/music-163-com-comments-spider/" rel="next" title="网易云音乐评论爬取(scrapy)">
-                <i class="fa fa-chevron-left"></i> 网易云音乐评论爬取(scrapy)
+              <a href="/2018/07/08/jiamitu-spider/" rel="next" title="加密兔爬虫(scrapy)">
+                <i class="fa fa-chevron-left"></i> 加密兔爬虫(scrapy)
               </a>
             
           </div>
@@ -443,8 +457,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/08/jiamitu-spider/" rel="prev" title="加密兔爬虫(scrapy)">
-                加密兔爬虫(scrapy) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/14/ltshop-writeup/" rel="prev" title="护网杯ltshop题解">
+                护网杯ltshop题解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -576,7 +590,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机-VS-Docker"><span class="nav-number">1.</span> <span class="nav-text">虚拟机 VS Docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker组成"><span class="nav-number">2.</span> <span class="nav-text">Docker组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决mysql无法启动问题"><span class="nav-number">3.</span> <span class="nav-text">解决mysql无法启动问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">3.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flag"><span class="nav-number">4.</span> <span class="nav-text">Flag</span></a></li></ol></div>
             
 
           </div>
