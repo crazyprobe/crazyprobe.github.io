@@ -123,7 +123,7 @@
 <meta property="og:image" content="https://www.zer0i3.com/2018/07/08/jiamitu-spider/jiamitu-spider/code_403.png">
 <meta property="og:image" content="https://www.zer0i3.com/2018/07/08/jiamitu-spider/jiamitu-spider/response_403.png">
 <meta property="og:image" content="https://www.zer0i3.com/2018/07/08/jiamitu-spider/jiamitu-spider/result.png">
-<meta property="og:updated_time" content="2018-10-14T08:44:40.705Z">
+<meta property="og:updated_time" content="2018-10-14T08:55:48.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="加密兔爬虫(scrapy)">
 <meta name="twitter:description" content="之前面试要求写点小程序，记录下过程。 一.需求编写一个加密兔 兔宝爬虫 点击链接 http://t.cn/RdGOckh，登录后点击“领养”，抓取其中的兔宝数据。要求：  可以指定抓取的数量（精确到十位数即可）。  获取兔宝及父母信息。兔宝信息包括编号，代数，稀有度，当前价格。父母信息包括编号、代数、稀有度、属性（包含稀有程度）。  将兔宝与父母信息输出到文件中。  编程语言不限，使用技术不限。">
@@ -348,7 +348,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-14 16:44:40" itemprop="dateModified" datetime="2018-10-14T16:44:40+08:00">2018-10-14</time>
+                <time title="Modified: 2018-10-14 16:55:48" itemprop="dateModified" datetime="2018-10-14T16:55:48+08:00">2018-10-14</time>
               
             
           </span>
@@ -399,6 +399,7 @@
 <h3 id="二-分析"><a href="#二-分析" class="headerlink" title="二.分析"></a>二.分析</h3><p>​    基本需求使用Scrapy框架可快速实现。</p>
 <h3 id="三-环境"><a href="#三-环境" class="headerlink" title="三.环境"></a>三.环境</h3><p>​    1.Anaconda3 python3.6版本。</p>
 <p>​    2.Pycharm。</p>
+<a id="more"></a>
 <h3 id="四-操作"><a href="#四-操作" class="headerlink" title="四.操作"></a>四.操作</h3><h4 id="1-确定兔宝列表信息请求与相应"><a href="#1-确定兔宝列表信息请求与相应" class="headerlink" title="1.确定兔宝列表信息请求与相应"></a>1.确定兔宝列表信息请求与相应</h4><p><img src="jiamitu-spider/request_response.png" alt=""></p>
 <p>登陆后打开网络选项卡，滚动页面查看网络请求，发现页面通过Ajax异步请求Json格式的数据，查看请求体与返回体。原始请求url如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://jiamitu.mi.com/pet/ng/listng?page=3&amp;limit=10&amp;order=desc&amp;orderBy=update_time&amp;rare=&amp;followUp=https:%2F%2Fjiamitu.mi.com%2Fauction%3FuserId%3D19619417</span><br></pre></td></tr></table></figure>
