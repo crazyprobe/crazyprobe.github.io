@@ -277,6 +277,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.zer0i3.com/2018/10/14/ltshop-writeup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zer0i3">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zer0i3's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/14/ltshop-writeup/" itemprop="url">
+                  护网杯ltshop题解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-10-14 20:57:38 / Modified: 21:01:56" itemprop="dateCreated datePublished" datetime="2018-10-14T20:57:38+08:00">2018-10-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>登录后可以看到home与info页面，home页面中可以看到flag需要兑换才能得到，info页面中可以看到当前用户的相关信息，其中赠送了20元余额</p>
+<ul>
+<li><p>直接点击兑换flag，提示你的辣条之王还不够多</p>
+</li>
+<li><p>输入数量，批量兑换辣条之王，当输入非数字与负数时提示兑换数目非法，继续尝试正数发现当输入在0-18446744073709551615时，提示一个也换不起，不要尝试了，当大于18446744073709551615时，提示兑换数目非法，即输入范围需要在uint64范围内</p>
+</li>
+<li><p>点击购买大辣条，提示成功购买一个，点击4次后兑换了4包，余额为0，无法继续兑换，而兑换辣条之王需要5个大辣条，兑换0个时也提示一个也换不起，不要兑换了，所以考虑至少拥有5个大辣条才允许进行兑换操作</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/14/ltshop-writeup/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.zer0i3.com/2018/07/08/jiamitu-spider/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -791,7 +941,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -810,7 +960,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>

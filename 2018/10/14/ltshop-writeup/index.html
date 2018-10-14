@@ -108,27 +108,29 @@
 
 
 
-  <meta name="description" content="​    如果好奇一个人在网易云音乐评论里说过什么的话，爬取所有歌单里歌曲的评论是个可行的方案，毕竟世界是属于我们程序员的。所以拾起Python，大概过了一遍Scrapy的教程，写了个简陋的爬虫，目前还有一些小问题，等好好研究研究再修复，这里记一下这个过程里遇到的坑。">
-<meta name="keywords" content="scrapy">
+  <meta name="description" content="登录后可以看到home与info页面，home页面中可以看到flag需要兑换才能得到，info页面中可以看到当前用户的相关信息，其中赠送了20元余额  直接点击兑换flag，提示你的辣条之王还不够多  输入数量，批量兑换辣条之王，当输入非数字与负数时提示兑换数目非法，继续尝试正数发现当输入在0-18446744073709551615时，提示一个也换不起，不要尝试了，当大于184467440737">
+<meta name="keywords" content="ctf,writeup">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网易云音乐评论爬取(scrapy)">
-<meta property="og:url" content="https://www.zer0i3.com/2018/05/29/music-163-com-comments-spider/index.html">
+<meta property="og:title" content="护网杯ltshop题解">
+<meta property="og:url" content="https://www.zer0i3.com/2018/10/14/ltshop-writeup/index.html">
 <meta property="og:site_name" content="zer0i3&#39;s Notes">
-<meta property="og:description" content="​    如果好奇一个人在网易云音乐评论里说过什么的话，爬取所有歌单里歌曲的评论是个可行的方案，毕竟世界是属于我们程序员的。所以拾起Python，大概过了一遍Scrapy的教程，写了个简陋的爬虫，目前还有一些小问题，等好好研究研究再修复，这里记一下这个过程里遇到的坑。">
+<meta property="og:description" content="登录后可以看到home与info页面，home页面中可以看到flag需要兑换才能得到，info页面中可以看到当前用户的相关信息，其中赠送了20元余额  直接点击兑换flag，提示你的辣条之王还不够多  输入数量，批量兑换辣条之王，当输入非数字与负数时提示兑换数目非法，继续尝试正数发现当输入在0-18446744073709551615时，提示一个也换不起，不要尝试了，当大于184467440737">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://www.zer0i3.com/2018/05/29/music-163-com-comments-spider/music_163_debug.jpg">
-<meta property="og:updated_time" content="2018-10-14T12:54:24.819Z">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/14/ltshop-writeup/image-20181010111346429.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/14/ltshop-writeup/image-20181010113623217.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/14/ltshop-writeup/image-20181010113409220.png">
+<meta property="og:updated_time" content="2018-10-14T13:01:56.194Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网易云音乐评论爬取(scrapy)">
-<meta name="twitter:description" content="​    如果好奇一个人在网易云音乐评论里说过什么的话，爬取所有歌单里歌曲的评论是个可行的方案，毕竟世界是属于我们程序员的。所以拾起Python，大概过了一遍Scrapy的教程，写了个简陋的爬虫，目前还有一些小问题，等好好研究研究再修复，这里记一下这个过程里遇到的坑。">
-<meta name="twitter:image" content="https://www.zer0i3.com/2018/05/29/music-163-com-comments-spider/music_163_debug.jpg">
+<meta name="twitter:title" content="护网杯ltshop题解">
+<meta name="twitter:description" content="登录后可以看到home与info页面，home页面中可以看到flag需要兑换才能得到，info页面中可以看到当前用户的相关信息，其中赠送了20元余额  直接点击兑换flag，提示你的辣条之王还不够多  输入数量，批量兑换辣条之王，当输入非数字与负数时提示兑换数目非法，继续尝试正数发现当输入在0-18446744073709551615时，提示一个也换不起，不要尝试了，当大于184467440737">
+<meta name="twitter:image" content="https://www.zer0i3.com/2018/10/14/ltshop-writeup/image-20181010111346429.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.zer0i3.com/2018/05/29/music-163-com-comments-spider/"/>
+  <link rel="canonical" href="https://www.zer0i3.com/2018/10/14/ltshop-writeup/"/>
 
 
 
@@ -138,7 +140,7 @@
   };
 </script>
 
-  <title>网易云音乐评论爬取(scrapy) | zer0i3's Notes</title>
+  <title>护网杯ltshop题解 | zer0i3's Notes</title>
   
 
 
@@ -283,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.zer0i3.com/2018/05/29/music-163-com-comments-spider/">
+    <link itemprop="mainEntityOfPage" href="https://www.zer0i3.com/2018/10/14/ltshop-writeup/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zer0i3">
@@ -300,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">网易云音乐评论爬取(scrapy)
+          <h1 class="post-title" itemprop="name headline">护网杯ltshop题解
               
             
           </h1>
@@ -325,24 +327,12 @@
                 
               
 
-              <time title="Created: 2018-05-29 00:34:27" itemprop="dateCreated datePublished" datetime="2018-05-29T00:34:27+08:00">2018-05-29</time>
+              <time title="Created: 2018-10-14 20:57:38 / Modified: 21:01:56" itemprop="dateCreated datePublished" datetime="2018-10-14T20:57:38+08:00">2018-10-14</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-10-14 20:54:24" itemprop="dateModified" datetime="2018-10-14T20:54:24+08:00">2018-10-14</time>
               
             
           </span>
@@ -375,14 +365,29 @@
       
 
       
-        <p>​    如果好奇一个人在网易云音乐评论里说过什么的话，爬取所有歌单里歌曲的评论是个可行的方案，毕竟世界是属于我们程序员的。所以拾起Python，大概过了一遍Scrapy的教程，写了个简陋的爬虫，目前还有一些小问题，等好好研究研究再修复，这里记一下这个过程里遇到的坑。</p>
+        <p>登录后可以看到home与info页面，home页面中可以看到flag需要兑换才能得到，info页面中可以看到当前用户的相关信息，其中赠送了20元余额</p>
+<ul>
+<li><p>直接点击兑换flag，提示你的辣条之王还不够多</p>
+</li>
+<li><p>输入数量，批量兑换辣条之王，当输入非数字与负数时提示兑换数目非法，继续尝试正数发现当输入在0-18446744073709551615时，提示一个也换不起，不要尝试了，当大于18446744073709551615时，提示兑换数目非法，即输入范围需要在uint64范围内</p>
+</li>
+<li><p>点击购买大辣条，提示成功购买一个，点击4次后兑换了4包，余额为0，无法继续兑换，而兑换辣条之王需要5个大辣条，兑换0个时也提示一个也换不起，不要兑换了，所以考虑至少拥有5个大辣条才允许进行兑换操作</p>
 <a id="more"></a>
-<h3 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h3><p>​    感觉Scrapy的运行环境在windows上安装起来极度不友好，所以在服务器上果断换成用<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" target="_blank" rel="noopener">Anaconda</a>了。同时因为评论太多了，比方像《晴天》这样火爆的一首歌现在评论就有200W+了，要想以后充分利用爬取的数据，数据库是必须的，所以用了Mysql数据库。注意要用5.6及以上的版本，因为从5.6开始Mysql支持utf8mb4编码，简单来说就是扩充了原有的utf8编码，增加了对emoji表情等的编码，而评论里是可能会有表情的。</p>
-<h3 id="程序逻辑"><a href="#程序逻辑" class="headerlink" title="程序逻辑"></a>程序逻辑</h3><p>​    因为使用了Scrapy框架，程序也就符合Scrapy的流程了。最简单的爬取就是发出请求然后处理响应，而用Scrapy的话这些统一由它的引擎管理，还可以在这个交互过程里根据需求加一些中间件、设置数据导出方式等。爬虫里因为需要插入数据库，所以在数据导出的地方用twisted实现了异步向数据库插入数据的接口，同时因为网易云的反爬虫机制，只使用本地IP的话，爬一会儿能有个几十万条数据就会失去响应了。所以写了一个利用动态代理的中间件(一开始还写了个爬取免费代理的爬虫，但是代理存活率太低了，所以暂时放弃)，动态代理其实就是维护了一批时效性很高的可用代理，等后续可以研究下怎么自己实现一个，当然twisted也要好好研究下。</p>
-<h3 id="接口获取"><a href="#接口获取" class="headerlink" title="接口获取"></a>接口获取</h3><p>​    现在好像都流行MVVM架构了，所以获取网易云音乐的数据都是通过接口获取Json格式的数据。像网址都是像这样的：<code>http://music.163.com/weapi/v1/resource/comments/R_SO_4_555347343</code>，但是请求参数都是加密的。从知乎上看到说有不加密的请求地址，所以可以构造像这样的不加密的连接<code>http://music.163.com/api/v1/resource/comments/R_SO_4_555347343</code>然后在js里加断点找出明文的参数一起放在请求里：</p>
-<p><img src="./music_163_debug.jpg" alt=""></p>
-<p>用户信息，歌单信息，评论信息都这样获取参数然后构造请求就可以了。</p>
-<h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p>​    最后放下目前的程序吧，存在的问题什么的可以看项目的ReadMe。<br>​    <a href="https://github.com/crazyprobe/netease_music_comments_spider" target="_blank" rel="noopener">https://github.com/crazyprobe/netease_music_comments_spider</a></p>
+</li>
+<li><p>余额最多只有20，结合此处的购买场景，考虑竞态条件漏洞，于是注册新的账号，burp拦截购买请求后，使用Intruder进行并发请求(Payload type:Null payloads)<img src="./image-20181010111346429.png" alt="image-20181010111346429"></p>
+</li>
+<li><p>长度为162的即为请求成功，而这样的请求远远超过了4个，查看info页面，发现余额为0，大辣条数目为10，此时兑换辣条之王可以兑换成功，并且兑换0个时提示成功兑换0个</p>
+</li>
+<li><p>之前brup拦截时发现<code>Cookie: go_iris_cookie=727c0799-97b8-43a9-bcd2-995ab93a5739;</code> 搜索go_iris，可知web服务使用go语言的iris框架写的，而go语言是强类型的，也就解释了为什么输入范围控制在uint64范围内，因为输入数目为0时也成功兑换，推测服务器判断是否允许兑换时执行<code>number * 5 &lt;= 大辣条数目</code> 并且number为uint64类型，所以考虑存在uint64溢出问题</p>
+</li>
+<li><p>使用python计算number值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = (<span class="number">2</span> ** <span class="number">64</span> - <span class="number">1</span>) // <span class="number">5</span> + <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line"><span class="number">3689348814741910324</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a * <span class="number">5</span> % (<span class="number">2</span> ** <span class="number">64</span>)</span><br><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>即当输入3689348814741910324时，溢出了uint64，此时只要大辣条数目大于等于4即可兑换成功，</p>
+</li>
+</ul>
+<p><img src="./image-20181010113623217.png" alt="image-20181010113623217"></p>
+<p>此时辣条数目远大于9999999，所以兑换得到flag:</p>
+<p><img src="./image-20181010113409220.png" alt="image-20181010113409220"></p>
 
       
     </div>
@@ -403,7 +408,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/scrapy/" rel="tag"># scrapy</a>
+            <a href="/tags/ctf-writeup/" rel="tag"># ctf,writeup</a>
           
         </div>
       
@@ -416,15 +421,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/07/08/jiamitu-spider/" rel="next" title="加密兔爬虫(scrapy)">
+                <i class="fa fa-chevron-left"></i> 加密兔爬虫(scrapy)
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/11/docker-first-step/" rel="prev" title="Docker初步使用">
-                Docker初步使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -469,17 +474,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -541,22 +537,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行环境"><span class="nav-number">1.</span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序逻辑"><span class="nav-number">2.</span> <span class="nav-text">程序逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口获取"><span class="nav-number">3.</span> <span class="nav-text">接口获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目地址"><span class="nav-number">4.</span> <span class="nav-text">项目地址</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
