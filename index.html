@@ -229,6 +229,137 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zer0i3">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zer0i3's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/21/hacklu-ctf-2018-ideashare-cn/" itemprop="url">hacklu CTF 2018-IDeaShare-writeup</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-21T19:37:28+08:00">
+                2018-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>A place to share your IDeas with your friends!</p>
+<p>Try to win the best IDea competition but be wary a strong force prevents any cheating.</p>
+<p>Good luck you will need it!</p>
+</blockquote>
+<p>题目地址(2018.10.21仍可正常访问)：<a href="https://arcade.fluxfingers.net:1818/" target="_blank" rel="noopener">IDeaShare</a></p>
+<p>访问题目地址发现是一个分享想法的平台，用户登录后可以保存自己的想法，将保存的想法分享以后，管理员会进行查看，如果分享的想法被管理员评价为<code>Best Idea</code>,就会赢得<code>BEST IDEA COMPETITION</code></p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>访问题目时，响应头中存在这样的字段<code>X-XSS-Protection: 0</code>,再加上知道管理员将会访问提交的想法，所以很容易想到构造XSS。但首先提交的想法中对许多关键字进行了过滤(诡异的过滤规则)，其次直接访问分享的想法，也并不能看到解析生效的内容。测试中发现第二个问题可以通过HTTP参数污染来进行绕过，但直到比赛结束也没有绕过第一个问题，后来听到大佬指点可以使用link标签，下面讲一下利用过程。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/21/hacklu-ctf-2018-ideashare-cn/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-en/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1039,7 +1170,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
